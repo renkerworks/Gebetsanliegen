@@ -27,6 +27,11 @@ export default function Home() {
     setPrayers(prayers.map(p => p.id === updatedPrayer.id ? updatedPrayer : p));
   };
 
+  // Gebetsanliegen löschen
+  const handleDeletePrayer = (prayerId: string) => {
+    setPrayers(prayers.filter(p => p.id !== prayerId));
+  };
+
   // Neues Gebetsanliegen hinzufügen
   const handleAddPrayer = (prayerData: Omit<Prayer, 'id' | 'createdAt'>) => {
     const newPrayer: Prayer = {
@@ -96,6 +101,7 @@ export default function Home() {
             setSelectedPrayer(null);
           }}
           onUpdate={handleUpdatePrayer}
+          onDelete={handleDeletePrayer}
         />
 
         {/* Formular für neues Anliegen */}
