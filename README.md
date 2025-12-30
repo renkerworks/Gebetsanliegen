@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gebetsanliegen-App
 
-## Getting Started
+Eine moderne Web-App zum Teilen und Verwalten von Gebetsanliegen, gebaut mit Next.js, TypeScript, React und Tailwind CSS.
 
-First, run the development server:
+## 🎨 Features
+
+- **Kachelübersicht**: Alle Gebetsanliegen als übersichtliche Cards
+- **Detailansicht**: Vollständige Details mit Bearbeitungsmöglichkeit
+- **Status-Tracking**: Markiere Gebete als beantwortet
+- **Fortschritt**: Aktualisiere den Fortschritt deiner Gebetsanliegen
+- **Responsive Design**: Mobile-first, funktioniert auf allen Geräten
+- **Modernes UI**: Türkis/Rosa Farben, pastellgrün für beantwortete Gebete
+
+## 🚀 Schnellstart
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development Server starten
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Öffne [http://localhost:3000](http://localhost:3000) im Browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build für Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📁 Projektstruktur
 
-To learn more about Next.js, take a look at the following resources:
+```
+gebetsanliegen-app/
+├── app/
+│   ├── layout.tsx          # Root Layout
+│   ├── page.tsx            # Hauptseite
+│   └── globals.css         # Globale Styles
+├── components/
+│   ├── PrayerCard.tsx      # Kachel-Komponente
+│   ├── PrayerModal.tsx     # Detailansicht/Modal
+│   └── PrayerForm.tsx      # Formular für neue Anliegen
+├── types/
+│   └── prayer.ts           # TypeScript-Typen
+└── data/
+    └── mockPrayers.ts      # Mock-Daten
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design-System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Farben
+- **Primär (Türkis)**: `#14B8A6` (teal-500)
+- **Primär (Rosa)**: `#EC4899` (pink-500)
+- **Beantwortet**: `#86EFAC` (green-300)
+- **Hintergrund**: `#F9FAFB` (gray-50)
 
-## Deploy on Vercel
+### Komponenten
+- **PrayerCard**: Zeigt Titel + Textauszug, farbige Kachel
+- **PrayerModal**: Detailansicht mit Bearbeitungsmöglichkeit
+- **PrayerForm**: Formular zum Hinzufügen neuer Anliegen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Verwendung
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Neues Gebetsanliegen hinzufügen**: Klicke auf "Neues Gebetsanliegen"
+2. **Details ansehen**: Klicke auf eine Kachel
+3. **Bearbeiten**: In der Detailansicht Fortschritt/Status ändern
+4. **Als beantwortet markieren**: Toggle in der Detailansicht
+
+## 🔧 Technologien
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **React 19**
+- **Tailwind CSS 4**
+- **Lucide React** (Icons)
+
+## 📚 Weitere Informationen
+
+Siehe [ARCHITECTURE.md](./ARCHITECTURE.md) für eine detaillierte Architektur-Erklärung.
+
+## 🚧 Erweiterungen (Post-MVP)
+
+- Persistenz (localStorage oder Datenbank)
+- Kategorien/Tags
+- Suchfunktion
+- Sortierung/Filterung
+- Benutzer-Authentifizierung
+- Teilen-Funktion
